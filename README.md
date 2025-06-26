@@ -1,8 +1,8 @@
 # Token Presale
 ## Overview 🪙
-Run a presale of ERC20 tokens through 3 phases of quantity/price/time.
+Run a presale of ERC20 tokens through 3 phases.
 ## Features 📃
-* Swap your USDC for DAI
+* Presale begins in three phases. Each phase has a specific token quantity, price per token, and a fixed time limit.
 * Provide liquidity to the USDC-DAI pool to receive Liquidity Provider Tokens (LP Tokens)
 * Redeem your LP Tokens to receive USD and DAI from the liquidity pool
 ## Technical details ⚙️
