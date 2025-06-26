@@ -3,8 +3,9 @@
 Run a presale of ERC20 tokens through 3 phases.
 ## Features 📃
 * Presale begins in three phases. Each phase has a specific token quantity, price per token, and a fixed time limit.
-* Provide liquidity to the USDC-DAI pool to receive Liquidity Provider Tokens (LP Tokens)
-* Redeem your LP Tokens to receive USD and DAI from the liquidity pool
+* Purchase tokens using USDT or USDC. Note: For this occasion, these stable coins are represented using mock tokens.
+* Purchase tokens using ETH. Note: For this occasion, the Arbitrum network was forked to obtain the current USD price of ETH using Chainlink data feeds.
+* Once the presale is over, you can safely claim your tokens to the account from which you made the transaction.
 ## Technical details ⚙️
 * Forked network for testing -> Arbitrum.
 * RPC Server Address -> https://arb1.arbitrum.io/rpc.
