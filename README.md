@@ -26,14 +26,30 @@ Run a presale of ERC20 tokens through 3 phases.
 8. Run the command `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test` followed by the name of a test function to test it and verify the smart contract functions are working correctly. For example, run `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test testUserCanBuyWithEther` to test the `testUserCanBuyWithEther` function.
 12. Run `forge coverage --fork-url https://arb1.arbitrum.io/rpc` to generate a code coverage report. This helps identify areas outside the coverage that could be exposed to errors/vulnerabilities.
 ## Functions 📌
-* `swapTokens()` -> Swap USDC for DAI.
-* `addLiquidity()` -> Contribute USDC and DAI to the USDC-DAI liquidity pool to receive Liquidity Provider Tokens.
-* `removeLiquidity()` -> Redeem your Liquidity Provider Tokens to receive USDC and DAI from the USDC-DAI liquidity pool.
+* `startPresale()` ->
+* `blacklist()` ->
+* `removeBlacklist()` ->
+* `checkCurrentPhase()` ->
+* `buyWithStable()` ->
+* `buyWithEther()` ->
+* `claim()` ->
+* `getEtherPrice()` ->
+* `emergencyERC2OWithdraw()` ->
+* `emergencyETHWithdraw()` ->
+
 ## Testing functions ⌨️
-* `testHasBeenDeployedCorrectly()` -> Verify that the swap app has been correctly initialized with the correct router address (`uniswapV2SwapRouterAddress`).
-* `testSwapTokensCorrectly()` -> Verify that the 6 USDC to DAI swap was successful. Note: The amount of DAI you receive will vary depending on the liquidity in the USDC -> DAI liquidity pool.
-* `testCanAddLiquidityCorrectly()` -> Verify that half of your USDC is swapped for DAI, that the USDC and DAI are contributed to the liquidity pool, and that you successfully obtain your Liquidity Provider Tokens.
-* `testCanRemoveLiquidityCorrectly()` -> Verify that your Liquidity Provider Tokens are redeemed and that you are successfully receiving USDC and DAI from the liquidity pool.
+* `testMockTokenMintsCorrectly()` ->
+* `testPresaleStartCorrectly()` ->
+* `testOnlyOwnerCanStartPresale()` ->
+* `testUserCanBuyWithStableCoin()` ->
+* `testUserCanBuyWithEther()` ->
+* `testUserCanClaim()` ->
+* `testUserBlokedCanNotBuyWithStable()` ->
+* `testUserBlokedCanNotBuyWithEther()` ->
+* `testUserBlokedCanNotClaim()` ->
+* `testOnlyOwnerCanWithdrawERC20()` ->
+* `testOnlyOwnerCanWithdrawEther()` ->
+* `testUserGetETHPriceCorrectly()` ->
 ## Forge Coverage ✅
 ![Forge Coverage](images/forgeCoverage.png)  
 
