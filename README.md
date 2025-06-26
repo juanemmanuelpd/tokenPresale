@@ -6,6 +6,9 @@ Run a presale of ERC20 tokens through 3 phases.
 * Purchase tokens using USDT or USDC. Note: For this occasion, these stable coins are represented using mock tokens.
 * Purchase tokens using ETH. Note: For this occasion, the Arbitrum network was forked to obtain the current USD price of ETH using Chainlink data feeds.
 * Once the presale is over, you can safely claim your tokens to the account from which you made the transaction.
+* At any time you can check the price of ETH in USD through the chainlink data feed.
+* In case of emergency, the owner can withdraw all funds from the smart contract, both in stable coins and in ether.
+* 
 ## Technical details ⚙️
 * Forked network for testing -> Arbitrum.
 * RPC Server Address -> https://arb1.arbitrum.io/rpc.
