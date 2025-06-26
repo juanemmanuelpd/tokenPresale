@@ -21,10 +21,10 @@ Run a presale of ERC20 tokens through 3 phases.
 2. Open Visual Studio Code (you should already have Foundry installed).
 3. Select "File" > "Open Folder", select the cloned repository folder.
 4. In the project navigation bar, open the "presaleTest.t.sol" file located in the "test" folder.
-6. In the toolbar above, select "Terminal" > "New Terminal".
-7. Select the "Git bash" terminal (previously installed).
-8. Run the command `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test` followed by the name of a test function to test it and verify the smart contract functions are working correctly. For example, run `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test testUserCanBuyWithEther` to test the `testUserCanBuyWithEther` function.
-12. Run `forge coverage --fork-url https://arb1.arbitrum.io/rpc` to generate a code coverage report. This helps identify areas outside the coverage that could be exposed to errors/vulnerabilities.
+5. In the toolbar above, select "Terminal" > "New Terminal".
+6. Select the "Git bash" terminal (previously installed).
+7. Run the command `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test` followed by the name of a test function to test it and verify the smart contract functions are working correctly. For example, run `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test testUserCanBuyWithEther` to test the `testUserCanBuyWithEther` function.
+8. Run `forge coverage --fork-url https://arb1.arbitrum.io/rpc` to generate a code coverage report. This helps identify areas outside the coverage that could be exposed to errors/vulnerabilities.
 ## Functions 📌
 * `startPresale()` -> Send from the owner to the presale contract the entire amount of tokens that will be released in the presale.
 * `blacklist()` -> The owner can block malicious users from purchasing or claiming their purchased tokens.
@@ -38,18 +38,18 @@ Run a presale of ERC20 tokens through 3 phases.
 * `emergencyETHWithdraw()` -> In case of emergency the owner can withdraw all funds in ether to his account.
 
 ## Testing functions ⌨️
-* `testMockTokenMintsCorrectly()` ->
-* `testPresaleStartCorrectly()` ->
-* `testOnlyOwnerCanStartPresale()` ->
-* `testUserCanBuyWithStableCoin()` ->
-* `testUserCanBuyWithEther()` ->
-* `testUserCanClaim()` ->
-* `testUserBlokedCanNotBuyWithStable()` ->
-* `testUserBlokedCanNotBuyWithEther()` ->
-* `testUserBlokedCanNotClaim()` ->
-* `testOnlyOwnerCanWithdrawERC20()` ->
-* `testOnlyOwnerCanWithdrawEther()` ->
-* `testUserGetETHPriceCorrectly()` ->
+* `testMockTokenMintsCorrectly()` -> Verify that the contract correctly mint tokens for the presale.
+* `testPresaleStartCorrectly()` -> Verify that the pre-sale starts correctly with the total amount of tokens to be sold.
+* `testOnlyOwnerCanStartPresale()` -> Verify that only the owner can start the presale.
+* `testUserCanBuyWithStableCoin()` -> Verify that the user can successfully purchase tokens using stable coins.
+* `testUserCanBuyWithEther()` -> Verify that the user can successfully purchase tokens using Ethereum.
+* `testUserCanClaim()` -> Verify that when the presale ends, users can claim the tokens that belong to them according to the phase in which they were purchased.
+* `testUserBlokedCanNotBuyWithStable()` -> Ensures that blocked users cannot purchase tokens using stable coins.
+* `testUserBlokedCanNotBuyWithEther()` -> Verify that blocked users cannot purchase tokens using Ethereum.
+* `testUserBlokedCanNotClaim()` -> Verify that blocked users cannot claim their purchased tokens.
+* `testOnlyOwnerCanWithdrawERC20()` -> Ensures that only the owner can withdraw all stable coins from the contract in case of emergency.
+* `testOnlyOwnerCanWithdrawEther()` -> Ensure that only the owner can withdraw all ETH from the contract in case of emergency.
+* `testUserGetETHPriceCorrectly()` -> Please verify that the current price of ETH in USD can be correctly retrieved.
 ## Forge Coverage ✅
 ![Forge Coverage](images/forgeCoverage.png)  
 
