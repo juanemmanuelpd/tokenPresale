@@ -26,16 +26,16 @@ Run a presale of ERC20 tokens through 3 phases.
 8. Run the command `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test` followed by the name of a test function to test it and verify the smart contract functions are working correctly. For example, run `forge test -vvvv --fork-url https://arb1.arbitrum.io/rpc --match-test testUserCanBuyWithEther` to test the `testUserCanBuyWithEther` function.
 12. Run `forge coverage --fork-url https://arb1.arbitrum.io/rpc` to generate a code coverage report. This helps identify areas outside the coverage that could be exposed to errors/vulnerabilities.
 ## Functions 📌
-* `startPresale()` ->
-* `blacklist()` ->
-* `removeBlacklist()` ->
-* `checkCurrentPhase()` ->
-* `buyWithStable()` ->
-* `buyWithEther()` ->
-* `claim()` ->
-* `getEtherPrice()` ->
-* `emergencyERC2OWithdraw()` ->
-* `emergencyETHWithdraw()` ->
+* `startPresale()` -> Send from the owner to the presale contract the entire amount of tokens that will be released in the presale.
+* `blacklist()` -> The owner can block malicious users from purchasing or claiming their purchased tokens.
+* `removeBlacklist()` -> The owner can remove users from the blacklist at any time.
+* `checkCurrentPhase()` -> Verify that the conditions for limiting the amount of tokens to be purchased and the time limit per phase are met for each of the 3 phases of the presale.
+* `buyWithStable()` -> The user can purchase tokens on the presale using USDT or USDC.
+* `buyWithEther()` -> The user can purchase tokens on the presale using ETH.
+* `claim()` -> Once the presale ends, the user can claim the tokens they purchased.
+* `getEtherPrice()` -> The user can check the current price of ETH in USD at any time through the chainlink data feed before making their purchase.
+* `emergencyERC2OWithdraw()` -> In case of emergency, the owner can withdraw all funds in stable coins to his account.
+* `emergencyETHWithdraw()` -> In case of emergency the owner can withdraw all funds in ether to his account.
 
 ## Testing functions ⌨️
 * `testMockTokenMintsCorrectly()` ->
